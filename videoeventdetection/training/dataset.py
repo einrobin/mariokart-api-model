@@ -16,8 +16,8 @@ def load_dataset_metadata(dataset_dir: str):
         dataset_yaml = yaml.safe_load(f)
 
     classes = dataset_yaml["names"]
-    train_dirs = [os.path.join("training-data", dataset_yaml["train"], cls) for cls in classes]
-    val_dirs = [os.path.join("training-data", dataset_yaml["val"], cls) for cls in classes]
+    train_dirs = [os.path.join(dataset_dir, dataset_yaml["train"], cls) for cls in classes]
+    val_dirs = [os.path.join(dataset_dir, dataset_yaml["val"], cls) for cls in classes]
 
     return DatasetMetadata(classes=classes, class_count=dataset_yaml["nc"],
                            train_directories=train_dirs, val_directories=val_dirs)
