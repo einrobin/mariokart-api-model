@@ -2,9 +2,8 @@ name: Build
 
 on:
   push:
-    branches: [main, feature/gh-workflows]
-  pull_request:
-    branches: [main]
+    tags:
+      - '**'
 
 jobs:
   build:
