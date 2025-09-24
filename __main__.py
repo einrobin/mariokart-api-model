@@ -1,7 +1,12 @@
 import argparse
 
+from install_torch import install_torch, install_torchvision
+
 
 def main():
+    install_torch()
+    install_torchvision()
+
     parser = argparse.ArgumentParser(prog='mktrain', description='Command line interface for the Mario Kart trainer')
     subparsers = parser.add_subparsers()
 
