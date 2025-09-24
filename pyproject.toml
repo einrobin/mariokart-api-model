@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mktrain"
+version = "0.1.0"
+description = "Tool to train an ML-model for events in Mario Kart"
+authors = [
+    { name = "Robin M.", email = "derrop@outlook.de" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # requires pip config set global.extra-index-url https://download.pytorch.org/whl/cu121
+    "torch==2.5.1+cu121",
+    "torchvision==0.20.1+cu121",
+    "av==15.1.0",
+    "moviepy==1.0.3",
+    "pygrabber",
+    "opencv-python",
+    "PyYAML>=6.0.2",
+    "boto3>=1.40.37"
+]
+
+[tool.setuptools]
+packages = ["videoeventdetection"]
